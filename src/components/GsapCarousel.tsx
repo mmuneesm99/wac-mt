@@ -55,8 +55,8 @@ export default function SwiperCards() {
       y: 100,
     });
 
-    const tl = gsap.timeline({ 
-      defaults: { duration: 0.5, ease: "power2.out" } 
+    const tl = gsap.timeline({
+      defaults: { duration: 0.5, ease: "power2.out" }
     });
 
     tl.to(el, {
@@ -99,7 +99,7 @@ export default function SwiperCards() {
     });
     const swiperElement = document.querySelector<HTMLElement & { swiper: SwiperClass }>('.mySwiper');
     if (!swiperElement?.swiper) return;
-    
+
     const swiperInstance = swiperElement.swiper;
     if (!swiperInstance) return;
 
@@ -110,7 +110,7 @@ export default function SwiperCards() {
       scrub: true,
       onUpdate: (self) => {
         if (!isSectionTriggered) return;
-        
+
         const progress = self.progress;
         const totalSlides = swiperInstance.slides.length;
         const newIndex = Math.min(
@@ -124,7 +124,7 @@ export default function SwiperCards() {
         if (progress >= 0.95) {
           gsap.to(window, {
             duration: 1,
-            scrollTo: { y: "+=500", offsetY: 0 }, 
+            scrollTo: { y: "+=500", offsetY: 0 },
             ease: "power2.out"
           });
         }
@@ -161,9 +161,11 @@ export default function SwiperCards() {
             <Image
               src="/rice.png"
               alt="rice bag"
-              fill
-              style={{ objectFit: 'contain' }}
+              width={500}
+              height={0} // still required, but will be overridden
+              style={{ height: "auto", objectFit: "contain" }}
             />
+
           </div>
 
           <Swiper
