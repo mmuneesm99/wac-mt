@@ -95,8 +95,6 @@ export default function HeroSection() {
   useEffect(() => {
     const productsEls = productRefs.current;
     if (productsEls.length < 3 || !triggerRef.current) return;
-
-    // ✅ Set transform origin early
     productsEls.forEach(el => {
       gsap.set(el, { transformOrigin: 'center bottom' });
     });
@@ -157,9 +155,6 @@ export default function HeroSection() {
           gsap.to(window, {
             duration: 1,
             scrollTo: { y: targetEl, offsetY: 50 },
-            onComplete: () => {
-              gsap.to(window, { duration: 0.5, scrollTo: { y: 0, offsetY: 0 } });
-            },
             ease: "power2.inOut"
           });
         }
