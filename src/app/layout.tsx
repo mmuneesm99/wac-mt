@@ -10,8 +10,8 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Premium Basmati Rice - Premium Rice Co.",
-  description: "Experience the finest quality basmati rice, carefully selected and processed to bring you the authentic taste of traditional Indian cuisine.",
+  title: "Mattanad",
+  description: "Experience the finest quality matta rice, carefully selected and processed to bring you the authentic taste of traditional Indian cuisine.",
 };
 
 export default function RootLayout({
